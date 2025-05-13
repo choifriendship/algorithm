@@ -1,15 +1,15 @@
-import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
 
 interface Main {
-    static void main(String[] args) throws IOException {
+    static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int A = sc.nextInt();
-        int res = 1;
-
-        for (int i = 1; i <= A; i++) {
-            res *= i;
-        }
+        int N = Integer.parseInt(sc.nextLine());
+        int res = factorial(N);
         System.out.println(res);
+    }
+
+    static int factorial(int num) {
+        if(num == 0) return 1;
+        else return num * factorial(num - 1);
     }
 }
